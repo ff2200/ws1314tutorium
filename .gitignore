@@ -16,3 +16,7 @@
 *.exe
 *.out
 *.app
+
+# Private Files
+intro.md
+intro.html
