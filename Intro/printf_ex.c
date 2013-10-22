@@ -6,6 +6,9 @@
  * Probieren Sie a,b,c,d  mit dem Format %c, %o und  %x  aus.
  * Was stellen Sie fest?
  *
+ * Hinweis:
+ * fuer long Datentypen benoetigen Sie noch einen zusaetzlichen "length modifier"
+ *
  * Compile mit 'make'
  */
 
