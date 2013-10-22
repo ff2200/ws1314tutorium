@@ -29,6 +29,7 @@ int main(void) {
     printf("Out: %f\n", );
     printf("Out: %x\n", );
     printf("Out: %o\n", );
+    printf("Out: %c\n", );
 
     // special trick question:
     // printf("Out: %p\n", );
