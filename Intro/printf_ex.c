@@ -31,7 +31,7 @@ int main(void) {
     printf("Out: %o\n", );
 
     // special trick question:
-    // printf("Out: %p\n, );
+    // printf("Out: %p\n", );
 
     return 0;
 }
