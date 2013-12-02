@@ -7,6 +7,7 @@ typedef struct Str {
     char str[MAX];
 } Str;
 
+
 Str* reverse(Str*);
 
 int main(void) {
@@ -24,8 +25,13 @@ Str* reverse(Str* t) {
     int k = t->len - 1;
     char tmp;
     for(int i=0; t->str[i] != '\0'; ++i) {
-
+        if (k<=i) break;
+        tmp = t->str[i];
+        t->str[i] = t->str[k];
+        t->str[k] = tmp;
+        --k;
     }
+    return t;
 }
 
 
