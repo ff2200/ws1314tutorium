@@ -1,5 +1,33 @@
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include "singlelinkedlist.h"
+
+#define BUFSIZE 256
+
+String_LL* populateList(String_LL* head) {
+    char c = 0;
+    
+    while(1) {
+        char buf[BUFSIZE] = { '\0' };
+        unsigned int i = 0;
+      
+        while((buf[i++] = c = getchar()) != EOF && c != '\n' && i < BUFSIZE)
+            ; // get input
+
+        buf[--i] = '\0';
+        
+        if (c == EOF) break; // bail out 
+        
+        // copy string to heap
+        char* str = strdup(buf);
+        String_LL* new = createNewElem(str);
+        head = append(head, new);
+    }
+    return head;
+}
+
+
 
 String_LL* createNewElem(char* payload) {
     String_LL* new = calloc(1, sizeof(String_LL));
@@ -39,6 +67,7 @@ String_LL* insertFront(String_LL* head, String_LL* elem) {
 
 
 String_LL* freeList(String_LL* head) {
+    if (head == NULL) return NULL;
     String_LL* runner = head;
     while(runner != NULL) {
         runner = head->next;
